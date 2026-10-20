@@ -1,0 +1,513 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>Needle Art Tailoring</title>
+<meta name="description" content="Needle Art Tailoring in New Westminster, BC. Alterations and repairs for all garments, plus custom-made Afghan and Pakistani clothing for men and women. Rated 5.0 on Google.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:ital,wght@0,400;0,500;0,600;1,400&family=Lora:ital,wght@0,400;1,400;1,500&display=swap">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Needle Art Tailoring",
+  "description": "Alterations, clothing repair and custom Afghan and Pakistani tailoring for men and women in New Westminster, BC.",
+  "telephone": "+1-672-966-1500",
+  "email": "Sajadrasa220@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "331 Agnes St",
+    "addressLocality": "New Westminster",
+    "addressRegion": "BC",
+    "postalCode": "V3L 1E7",
+    "addressCountry": "CA"
+  },
+  "geo": { "@type": "GeoCoordinates", "latitude": 49.2064365, "longitude": -122.9073899 },
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "26" },
+  "sameAs": ["https://maps.google.com/?cid=5032790874301646047"]
+}
+</script>
+<style>
+/* Layout: one 1100px column; sections separated by a running-stitch rule instead of boxes.
+   The review wall is the centerpiece; everything else stays quiet around it. */
+:root {
+  --bg: #F4F5F2;          /* chalk */
+  --surface: #FFFFFF;
+  --surface-2: #E9EBE6;
+  --fg: #1B2238;          /* indigo ink */
+  --muted: #5B6279;
+  --line: #CFD3CC;
+  --accent: #B8860B;      /* gold thread, text-safe on chalk */
+  --accent-strong: #D9A21B;
+  --accent-soft: #F6ECCF;
+  --ink-band: #1B2238;    /* dark band background */
+  --ink-band-fg: #F4F5F2;
+  --ink-band-muted: #B6BCCF;
+  --star: #E0A80F;
+
+  --font-display: "Bricolage Grotesque", "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Figtree", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-quote: "Lora", Georgia, "Times New Roman", serif;
+  --radius: 6px;
+  --gutter-l: max(16px, env(safe-area-inset-left, 0px));
+  --gutter-r: max(16px, env(safe-area-inset-right, 0px));
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #131829; --surface: #1C2238; --surface-2: #242B45; --fg: #ECEEF4; --muted: #A9B0C6;
+    --line: #333B58; --accent: #E6B53C; --accent-strong: #E6B53C; --accent-soft: #2E2A1E;
+    --ink-band: #0E1220; --ink-band-fg: #ECEEF4; --ink-band-muted: #A9B0C6; --star: #F0BD2D;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #131829; --surface: #1C2238; --surface-2: #242B45; --fg: #ECEEF4; --muted: #A9B0C6;
+  --line: #333B58; --accent: #E6B53C; --accent-strong: #E6B53C; --accent-soft: #2E2A1E;
+  --ink-band: #0E1220; --ink-band-fg: #ECEEF4; --ink-band-muted: #A9B0C6; --star: #F0BD2D;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  margin: 0; background: var(--bg); color: var(--fg);
+  font-family: var(--font-body); font-size: 17px; line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+h1, h2, h3 { font-family: var(--font-display); line-height: 1.05; margin: 0; text-wrap: balance; letter-spacing: -0.01em; }
+h1 { font-size: clamp(2.4rem, 6vw, 4.4rem); font-weight: 800; }
+h2 { font-size: clamp(1.9rem, 4vw, 2.8rem); font-weight: 700; }
+h3 { font-size: 1.25rem; font-weight: 700; }
+p { margin: 0; }
+.wrap { max-width: 1100px; margin: 0 auto; padding-left: var(--gutter-l); padding-right: var(--gutter-r); }
+.eyebrow {
+  font-family: var(--font-body); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--accent);
+}
+:focus-visible { outline: 3px solid var(--accent-strong); outline-offset: 3px; }
+
+/* running stitch rule between sections */
+.stitch { height: 0; border: 0; border-top: 2px dashed var(--line); margin: 0; }
+
+/* buttons */
+.btn {
+  display: inline-flex; align-items: center; gap: 0.55rem; padding: 0.85rem 1.3rem;
+  border-radius: var(--radius); font-weight: 600; text-decoration: none; font-size: 1rem;
+  border: 2px solid transparent; white-space: nowrap;
+}
+.btn-primary { background: var(--accent-strong); color: #1B2238; border-color: var(--accent-strong); }
+.btn-primary:hover { filter: brightness(1.06); }
+.btn-ghost { background: transparent; color: var(--fg); border-color: var(--line); }
+.btn-ghost:hover { border-color: var(--fg); }
+.btn svg { width: 18px; height: 18px; flex: none; }
+
+/* nav */
+.nav {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 10;
+  background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+.nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: 0.8rem; }
+.brand { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; font-family: var(--font-display); font-weight: 800; font-size: 1.15rem; letter-spacing: -0.01em; }
+.brand svg { width: 26px; height: 26px; }
+.nav-links { display: flex; gap: 1.4rem; font-weight: 500; font-size: 0.95rem; }
+.nav-links a { text-decoration: none; color: var(--muted); }
+.nav-links a:hover { color: var(--fg); }
+.nav .btn { padding: 0.55rem 0.95rem; font-size: 0.92rem; }
+@media (max-width: 760px) { .nav-links { display: none; } .brand { font-size: 1rem; white-space: nowrap; } .nav .btn { padding: 0.5rem 0.8rem; font-size: 0.88rem; } }
+
+/* hero */
+.hero .wrap { display: grid; grid-template-columns: 1.3fr 1fr; gap: 3rem; align-items: center; padding-block: 4rem 3.5rem; }
+.hero-copy { display: grid; gap: 1.4rem; min-width: 0; }
+.hero-copy .lede { font-size: 1.15rem; color: var(--muted); max-width: 34rem; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 0.8rem; }
+.hero h1 em { font-style: normal; color: var(--accent); }
+.rating-card {
+  background: var(--ink-band); color: var(--ink-band-fg); border-radius: 10px; padding: 2rem;
+  display: grid; gap: 1rem; position: relative; overflow: hidden;
+}
+.rating-card::after {
+  content: ""; position: absolute; inset: 10px; border: 2px dashed color-mix(in srgb, var(--ink-band-fg) 22%, transparent);
+  border-radius: 6px; pointer-events: none;
+}
+.rating-big { font-family: var(--font-display); font-size: 6rem; font-weight: 800; line-height: 0.9; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; }
+.rating-big small { font-size: 1.1rem; font-weight: 600; letter-spacing: 0; color: var(--ink-band-muted); margin-left: 0.4rem; }
+.stars { display: inline-flex; gap: 2px; color: var(--star); }
+.stars svg { width: 22px; height: 22px; }
+.rating-card .stars svg { width: 28px; height: 28px; }
+.rating-meta { color: var(--ink-band-muted); font-size: 0.95rem; }
+.rating-card blockquote { margin: 0.4rem 0 0; font-family: var(--font-quote); font-style: italic; font-size: 1.1rem; line-height: 1.45; }
+.rating-card blockquote footer { font-family: var(--font-body); font-style: normal; font-size: 0.85rem; color: var(--ink-band-muted); margin-top: 0.5rem; }
+.rating-card a { color: var(--accent-strong); font-weight: 600; text-decoration: none; font-size: 0.95rem; }
+.rating-card a:hover { text-decoration: underline; }
+@media (max-width: 860px) {
+  .hero .wrap { grid-template-columns: 1fr; gap: 2rem; padding-block: 2.5rem 2.5rem; }
+  .rating-big { font-size: 4.6rem; }
+}
+
+/* section shells */
+.section .wrap { padding-block: 4.5rem; display: grid; gap: 2.2rem; }
+.section-head { display: grid; gap: 0.6rem; max-width: 40rem; }
+.section-head p { color: var(--muted); font-size: 1.05rem; }
+@media (max-width: 760px) { .section .wrap { padding-block: 3rem; } }
+
+/* reviews wall */
+.reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.1rem; }
+.review {
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 1.4rem 1.4rem 1.2rem; display: grid; gap: 0.9rem; align-content: start; min-width: 0;
+  position: relative;
+}
+.review.featured { grid-column: span 2; background: var(--accent-soft); border-color: transparent; }
+.review .stars svg { width: 18px; height: 18px; }
+.review q { quotes: none; font-family: var(--font-quote); font-size: 1.05rem; line-height: 1.5; }
+.review.featured q { font-size: 1.25rem; }
+.review .who { display: flex; align-items: center; justify-content: space-between; gap: 0.8rem; font-size: 0.9rem; color: var(--muted); }
+.review .who b { color: var(--fg); font-weight: 600; }
+.review .who .g { display: inline-flex; align-items: center; gap: 0.35rem; }
+.review .who .g svg { width: 14px; height: 14px; }
+.review .reply { border-left: 3px solid var(--accent-strong); padding-left: 0.8rem; font-size: 0.92rem; color: var(--muted); }
+.review .reply b { color: var(--fg); font-weight: 600; }
+.reviews-foot { display: flex; flex-wrap: wrap; gap: 0.8rem; align-items: center; justify-content: space-between; }
+.reviews-foot p { color: var(--muted); font-size: 0.95rem; }
+@media (max-width: 960px) { .reviews-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 620px) { .reviews-grid { grid-template-columns: 1fr; } .review.featured { grid-column: span 1; } }
+
+/* services */
+.services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.1rem; }
+.service { display: grid; gap: 0.7rem; padding: 1.6rem; border-top: 3px solid var(--accent-strong); background: var(--surface); border-radius: 0 0 var(--radius) var(--radius); min-width: 0; }
+.service p { color: var(--muted); }
+.service ul { margin: 0.2rem 0 0; padding-left: 1.1rem; color: var(--muted); display: grid; gap: 0.25rem; }
+.service .ico { width: 34px; height: 34px; color: var(--accent); }
+@media (max-width: 700px) { .services-grid { grid-template-columns: 1fr; } }
+
+/* gallery */
+.gallery { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.8rem; }
+.gallery figure { margin: 0; display: grid; gap: 0.5rem; min-width: 0; }
+.gallery .ph { aspect-ratio: 1; max-width: 100%; overflow: hidden; border-radius: var(--radius); background: var(--surface-2); }
+.gallery img { width: 100%; height: 100%; object-fit: cover; }
+.gallery figcaption { font-size: 0.85rem; color: var(--muted); }
+.gallery-note { color: var(--muted); font-size: 0.95rem; }
+@media (max-width: 700px) { .gallery { grid-template-columns: repeat(2, 1fr); } }
+
+/* about band */
+.about { background: var(--ink-band); color: var(--ink-band-fg); }
+.about .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; padding-block: 4.5rem; align-items: start; }
+.about .eyebrow { color: var(--accent-strong); }
+.about h2 { margin-bottom: 1rem; }
+.about p { color: var(--ink-band-muted); font-size: 1.05rem; max-width: 34rem; }
+.about p + p { margin-top: 0.9rem; }
+.facts { display: grid; gap: 0; border-top: 2px dashed color-mix(in srgb, var(--ink-band-fg) 25%, transparent); }
+.fact { display: grid; grid-template-columns: 1fr auto; gap: 1rem; align-items: baseline; padding: 1rem 0; border-bottom: 2px dashed color-mix(in srgb, var(--ink-band-fg) 25%, transparent); }
+.fact span { color: var(--ink-band-muted); }
+.fact b { font-family: var(--font-display); font-size: 1.6rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+@media (max-width: 760px) { .about .wrap { grid-template-columns: 1fr; gap: 2rem; padding-block: 3rem; } }
+
+/* visit */
+.visit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+.contact-list { display: grid; gap: 1.1rem; }
+.contact { display: grid; grid-template-columns: 28px 1fr; gap: 0.9rem; align-items: start; min-width: 0; }
+.contact svg { width: 24px; height: 24px; color: var(--accent); margin-top: 2px; }
+.contact .label { font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+.contact .val { font-size: 1.15rem; font-weight: 500; overflow-wrap: anywhere; }
+.contact .val a { text-decoration: none; }
+.contact .val a:hover { text-decoration: underline; }
+.contact .sub { color: var(--muted); font-size: 0.95rem; }
+.visit-cta { display: grid; gap: 1rem; align-content: start; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 1.8rem; }
+.visit-cta h3 { font-size: 1.5rem; }
+.visit-cta p { color: var(--muted); }
+.visit-cta .btns { display: grid; gap: 0.6rem; }
+.visit-cta .btn { justify-content: center; }
+@media (max-width: 760px) { .visit-grid { grid-template-columns: 1fr; } }
+
+/* footer */
+footer { border-top: 1px solid var(--line); }
+footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.8rem; padding-block: 1.6rem; color: var(--muted); font-size: 0.9rem; }
+footer a { text-decoration: none; }
+footer a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-star" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></symbol>
+  <symbol id="i-google" viewBox="0 0 24 24"><path fill="#4285F4" d="M21.6 12.2c0-.7-.1-1.4-.2-2H12v3.9h5.4c-.2 1.2-.9 2.3-2 3v2.5h3.2c1.9-1.7 3-4.3 3-7.4z"/><path fill="#34A853" d="M12 22c2.7 0 5-.9 6.6-2.4l-3.2-2.5c-.9.6-2 1-3.4 1-2.6 0-4.8-1.8-5.6-4.1H3.1v2.6C4.8 19.8 8.1 22 12 22z"/><path fill="#FBBC05" d="M6.4 14c-.2-.6-.3-1.3-.3-2s.1-1.4.3-2V7.4H3.1C2.4 8.8 2 10.4 2 12s.4 3.2 1.1 4.6L6.4 14z"/><path fill="#EA4335" d="M12 5.9c1.5 0 2.8.5 3.8 1.5l2.8-2.8C17 3 14.7 2 12 2 8.1 2 4.8 4.2 3.1 7.4L6.4 10c.8-2.3 3-4.1 5.6-4.1z"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M5 4h3.5l1.5 4-2 1.5a11 11 0 0 0 6.5 6.5L16 14l4 1.5V19a2 2 0 0 1-2 2A15 15 0 0 1 3 6a2 2 0 0 1 2-2z"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M3.5 7l8.5 6 8.5-6"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M12 7v5l3.5 2"/></symbol>
+  <symbol id="i-needle" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M20 4L6.5 17.5"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M6.5 17.5c-1.6 1.6-3.6 2.2-4.2 1.6s0-2.6 1.6-4.2"/><ellipse cx="17.5" cy="6.5" rx="1.6" ry="2.6" transform="rotate(45 17.5 6.5)" fill="none" stroke="currentColor" stroke-width="1.6"/><path fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-dasharray="2 2.5" d="M3 21c3-1 5-4 8-5s5 0 8-2"/></symbol>
+  <symbol id="i-scissors" viewBox="0 0 24 24"><circle cx="6" cy="6" r="3" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="6" cy="18" r="3" fill="none" stroke="currentColor" stroke-width="1.8"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M8.5 8L20 19M8.5 16L20 5"/></symbol>
+  <symbol id="i-ruler" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M3 15l12-12 6 6-12 12z"/><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" d="M8 10l1.5 1.5M11 7l1.5 1.5M14 4l1.5 1.5M6 12l2 2"/></symbol>
+  <symbol id="i-shirt" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M9 4L4 7l1.5 4L8 10v10h8V10l2.5 1L20 7l-5-3a3 3 0 0 1-6 0z"/></symbol>
+  <symbol id="i-bolt" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M13 2L5 13h6l-1 9 9-12h-6z"/></symbol>
+</svg>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Needle Art Tailoring, back to top">
+      <svg aria-hidden="true"><use href="#i-needle"/></svg>
+      Needle Art Tailoring
+    </a>
+    <nav class="nav-links" aria-label="Sections">
+      <a href="#reviews">Reviews</a>
+      <a href="#services">Services</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#visit">Visit</a>
+    </nav>
+    <a class="btn btn-primary" href="tel:+16729661500"><svg aria-hidden="true"><use href="#i-phone"/></svg>(672) 966-1500</a>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-copy">
+      <span class="eyebrow">Tailor &middot; New Westminster, BC</span>
+      <h1>Alterations done right, and <em>custom Afghan &amp; Pakistani</em> clothing made to measure.</h1>
+      <p class="lede">Hemming, resizing and repairs for any garment, plus perahan tunban, kurta and shalwar kameez stitched for men and women. Fair prices, quick turnaround, and 26 five-star reviews from neighbours who keep coming back.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="tel:+16729661500"><svg aria-hidden="true"><use href="#i-phone"/></svg>Call or text (672) 966-1500</a>
+        <a class="btn btn-ghost" href="https://www.google.com/maps/dir/?api=1&amp;destination=331+Agnes+St,+New+Westminster,+BC+V3L+1E7&amp;destination_place_id=ChIJa0eTnyvZhVQR38STo6IQ2EU" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-pin"/></svg>Get directions</a>
+      </div>
+    </div>
+    <aside class="rating-card" aria-label="Google rating">
+      <div class="rating-big">5.0<small>out of 5</small></div>
+      <div class="stars" aria-label="Five stars">
+        <svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg>
+      </div>
+      <p class="rating-meta">26 reviews on Google. Every one of them five stars.</p>
+      <blockquote>
+        &ldquo;As a tailor myself, I trust them completely for alterations and custom fitting.&rdquo;
+        <footer>Bashir Hussaini, Google review</footer>
+      </blockquote>
+      <a href="https://maps.google.com/?cid=5032790874301646047" target="_blank" rel="noopener">Read all reviews on Google &rarr;</a>
+    </aside>
+  </div>
+</section>
+
+<hr class="stitch">
+
+<section class="section" id="reviews">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">What customers say</span>
+      <h2>Rated 5.0 by every customer who has reviewed us.</h2>
+      <p>These are real, unedited Google reviews. Click any to read them all on Google Maps.</p>
+    </div>
+
+    <div class="reviews-grid">
+      <article class="review featured">
+        <div class="stars" aria-label="Five stars"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div>
+        <q>If you're looking for a fantastic tailor in the New Westminster area, Needle Art is the place to go. An excellent tailor. Very reasonable and fast. I needed some shirts shortened and he did it in a jiffy and charged me a very reasonable rate. I have a lot of shirts that need shortening, but decided to first try him with two, just in case. Now that I see his work, I'm heading there with all the rest. Friendly, polite, and hardworking.</q>
+        <div class="who"><span><b>Dilip</b> &middot; July 2026</span><span class="g"><svg aria-hidden="true"><use href="#i-google"/></svg>Google</span></div>
+      </article>
+
+      <article class="review">
+        <div class="stars" aria-label="Five stars"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div>
+        <q>Exceptional customer service. I was very impressed and satisfied with the quality of work that was provided and great pricing. I highly recommend them for any alterations and work needed done. They are at the top of my list for any alterations needed in the future.</q>
+        <div class="who"><span><b>Jose Diaz</b> &middot; October 2026</span><span class="g"><svg aria-hidden="true"><use href="#i-google"/></svg>Google</span></div>
+      </article>
+
+      <article class="review">
+        <div class="stars" aria-label="Five stars"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div>
+        <q>I truly wish this business continued success. The quality of the tailoring is exceptional, and every garment is fitted with great precision. As a tailor myself, I trust them completely for alterations and custom fitting. The tailor is highly experienced, reliable, and always available when needed.</q>
+        <div class="who"><span><b>Bashir Hussaini</b> &middot; August 2026</span><span class="g"><svg aria-hidden="true"><use href="#i-google"/></svg>Google</span></div>
+      </article>
+
+      <article class="review">
+        <div class="stars" aria-label="Five stars"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div>
+        <q>Amazing first experience, I will be back! Very affordable, quick service. Very friendly, and good quality work.</q>
+        <div class="who"><span><b>Lucy Matheson</b> &middot; October 2026</span><span class="g"><svg aria-hidden="true"><use href="#i-google"/></svg>Google</span></div>
+      </article>
+
+      <article class="review">
+        <div class="stars" aria-label="Five stars"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div>
+        <q>Excellent tailor. Fine skills. Worked with dedication. Spent time on the work, reasonable prices.</q>
+        <div class="who"><span><b>Satinder Sandhu</b> &middot; October 2026</span><span class="g"><svg aria-hidden="true"><use href="#i-google"/></svg>Google</span></div>
+      </article>
+
+      <article class="review">
+        <div class="stars" aria-label="Five stars"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div>
+        <q>Amazing service. Polite and respectful man, and also he's very on time. I'd strongly recommend him!</q>
+        <div class="who"><span><b>Ali Reza Ramazanzada</b> &middot; June 2026</span><span class="g"><svg aria-hidden="true"><use href="#i-google"/></svg>Google</span></div>
+      </article>
+
+      <article class="review">
+        <div class="stars" aria-label="Five stars"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div>
+        <q>Perfect service, professional and fast! Outstanding job.</q>
+        <div class="who"><span><b>Eduardo Pereda</b> &middot; June 2026</span><span class="g"><svg aria-hidden="true"><use href="#i-google"/></svg>Google</span></div>
+      </article>
+
+      <article class="review">
+        <div class="stars" aria-label="Five stars"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div>
+        <q>Amazing quality, love the service, always on time!</q>
+        <div class="who"><span><b>Google reviewer</b> &middot; July 2026</span><span class="g"><svg aria-hidden="true"><use href="#i-google"/></svg>Google</span></div>
+      </article>
+
+      <article class="review">
+        <div class="stars" aria-label="Five stars"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div>
+        <q>He is the best tailor.</q>
+        <div class="who"><span><b>Sardar Haidari</b> &middot; August 2026</span><span class="g"><svg aria-hidden="true"><use href="#i-google"/></svg>Google</span></div>
+      </article>
+    </div>
+
+    <div class="reviews-foot">
+      <p>Showing 9 of 26 reviews. Had work done here? A review helps a small shop more than you'd think.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:0.6rem">
+        <a class="btn btn-ghost" href="https://maps.google.com/?cid=5032790874301646047" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-google"/></svg>All 26 reviews</a>
+        <a class="btn btn-primary" href="https://search.google.com/local/writereview?placeid=ChIJa0eTnyvZhVQR38STo6IQ2EU" target="_blank" rel="noopener">Write a review</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="stitch">
+
+<section class="section" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Services</span>
+      <h2>Bring in anything that needs to fit better.</h2>
+      <p>Pricing is quoted up front when you drop the garment off, along with a pickup date. Small jobs are often turned around very quickly.</p>
+    </div>
+    <div class="services-grid">
+      <article class="service">
+        <svg class="ico" aria-hidden="true"><use href="#i-scissors"/></svg>
+        <h3>Alterations &amp; repairs</h3>
+        <p>Any garment, any fabric. Jeans, dresses, suits, jackets, uniforms and everyday clothes.</p>
+        <ul>
+          <li>Hemming pants, skirts and sleeves</li>
+          <li>Shortening and slimming shirts</li>
+          <li>Taking in or letting out waists and seams</li>
+          <li>Zipper replacement, patches, torn seams</li>
+        </ul>
+      </article>
+      <article class="service">
+        <svg class="ico" aria-hidden="true"><use href="#i-needle"/></svg>
+        <h3>Custom Afghan &amp; Pakistani clothing</h3>
+        <p>Stitched to your measurements, in the fabric and embroidery you choose.</p>
+        <ul>
+          <li>Perahan tunban and kurta for men</li>
+          <li>Shalwar kameez and dresses for women</li>
+          <li>Embroidered collars, cuffs and chest panels</li>
+          <li>Eid, wedding and everyday wear</li>
+        </ul>
+      </article>
+      <article class="service">
+        <svg class="ico" aria-hidden="true"><use href="#i-shirt"/></svg>
+        <h3>Suits, shirts &amp; formal wear</h3>
+        <p>Make an off-the-rack suit or dress shirt fit like it was made for you.</p>
+        <ul>
+          <li>Jacket sleeves and body</li>
+          <li>Trouser waist, seat and length</li>
+          <li>Shirt darts and sleeve length</li>
+        </ul>
+      </article>
+      <article class="service">
+        <svg class="ico" aria-hidden="true"><use href="#i-bolt"/></svg>
+        <h3>Quick turnaround</h3>
+        <p>Reviewers mention speed and punctuality more than anything else. Need something for an event this week? Call and ask.</p>
+        <ul>
+          <li>Small repairs done fast</li>
+          <li>Honest timelines, kept</li>
+          <li>Fair, up-front pricing</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<hr class="stitch">
+
+<section class="section" id="gallery">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Custom work</span>
+      <h2>Styles we stitch.</h2>
+      <p>A few of the cuts and embroidery styles available for custom orders. Bring a photo of what you have in mind, or pick from these.</p>
+    </div>
+    <div class="gallery">
+      <figure><div class="ph"><img src="images/kurta-rust-embroidered.jpg" alt="Rust-coloured men's kurta with embroidered chest panel and cuffs" loading="lazy"></div><figcaption>Embroidered chest panel, rust</figcaption></figure>
+      <figure><div class="ph"><img src="images/kurta-green-embroidered.jpg" alt="Dark green men's kurta with geometric embroidery" loading="lazy"></div><figcaption>Geometric embroidery, forest green</figcaption></figure>
+      <figure><div class="ph"><img src="images/kurtas-brown-beige.jpg" alt="Brown and beige embroidered kurtas on mannequins" loading="lazy"></div><figcaption>Brown and beige with gold stitching</figcaption></figure>
+      <figure><div class="ph"><img src="images/kurta-grey-embroidered.jpg" alt="Grey kurta with gold embroidery down the front and on the cuffs" loading="lazy"></div><figcaption>Slate grey, gold embroidery</figcaption></figure>
+      <figure><div class="ph"><img src="images/kurta-beige-collar-detail.jpg" alt="Close-up of a beige kurta collar with embroidered placket and loop buttons" loading="lazy"></div><figcaption>Embroidered placket detail</figcaption></figure>
+      <figure><div class="ph"><img src="images/kurta-white-classic.jpg" alt="Classic white men's kurta with band collar" loading="lazy"></div><figcaption>Classic white, band collar</figcaption></figure>
+      <figure><div class="ph"><img src="images/shirt-beige-trim.jpg" alt="Beige shirt with contrast trim on collar, placket and cuffs" loading="lazy"></div><figcaption>Contrast trim shirt</figcaption></figure>
+      <figure><div class="ph"><img src="images/shirt-black-folded.jpg" alt="Folded black dress shirt" loading="lazy"></div><figcaption>Fitted dress shirt</figcaption></figure>
+    </div>
+    <p class="gallery-note">Want to see finished pieces? Ask in the shop, or follow us on Facebook for recent work.</p>
+  </div>
+</section>
+
+<section class="about">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">About the shop</span>
+      <h2>One tailor. Every stitch by hand and by eye.</h2>
+      <p>Needle Art is a small, owner-run tailoring shop on Agnes Street in downtown New Westminster. The tailor trained and worked in Pakistan and Afghanistan before opening here, which is why traditional Afghan and Pakistani garments are a specialty alongside everyday Western alterations.</p>
+      <p>Customers keep using the same three words: polite, on time, reasonable. That is the whole approach. You get a clear price before any work starts, a realistic date, and a garment that fits.</p>
+    </div>
+    <div class="facts" aria-label="At a glance">
+      <div class="fact"><span>Google rating</span><b>5.0 / 5</b></div>
+      <div class="fact"><span>Five-star reviews</span><b>26 of 26</b></div>
+      <div class="fact"><span>Years of tailoring experience</span><b>5+</b></div>
+      <div class="fact"><span>Garments we work on</span><b>All types</b></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="visit">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Visit</span>
+      <h2>Downtown New Westminster, a short walk from Columbia Station.</h2>
+    </div>
+    <div class="visit-grid">
+      <div class="contact-list">
+        <div class="contact">
+          <svg aria-hidden="true"><use href="#i-pin"/></svg>
+          <div><div class="label">Address</div><div class="val">331 Agnes St<br>New Westminster, BC V3L 1E7</div><div class="sub">Downtown, one block up from Columbia St.</div></div>
+        </div>
+        <div class="contact">
+          <svg aria-hidden="true"><use href="#i-phone"/></svg>
+          <div><div class="label">Phone &amp; text</div><div class="val"><a href="tel:+16729661500">(672) 966-1500</a></div><div class="sub">Texting a photo of the garment is the fastest way to get a quote.</div></div>
+        </div>
+        <div class="contact">
+          <svg aria-hidden="true"><use href="#i-mail"/></svg>
+          <div><div class="label">Email</div><div class="val"><a href="mailto:Sajadrasa220@gmail.com">Sajadrasa220@gmail.com</a></div></div>
+        </div>
+        <div class="contact">
+          <svg aria-hidden="true"><use href="#i-clock"/></svg>
+          <div><div class="label">Hours</div><div class="val">Open daily</div><div class="sub">Call or text ahead for a fitting so we can give you full attention.</div></div>
+        </div>
+      </div>
+      <div class="visit-cta">
+        <h3>Ready when you are.</h3>
+        <p>Drop in with the garment, or send a text with a photo and what you need done. You'll get a price and a pickup date right away.</p>
+        <div class="btns">
+          <a class="btn btn-primary" href="tel:+16729661500"><svg aria-hidden="true"><use href="#i-phone"/></svg>Call (672) 966-1500</a>
+          <a class="btn btn-ghost" href="https://www.google.com/maps/dir/?api=1&amp;destination=331+Agnes+St,+New+Westminster,+BC+V3L+1E7&amp;destination_place_id=ChIJa0eTnyvZhVQR38STo6IQ2EU" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-pin"/></svg>Open in Google Maps</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; 2026 Needle Art Tailoring &middot; 331 Agnes St, New Westminster, BC</span>
+    <span><a href="https://maps.google.com/?cid=5032790874301646047" target="_blank" rel="noopener">Google Maps</a> &middot; <a href="https://search.google.com/local/writereview?placeid=ChIJa0eTnyvZhVQR38STo6IQ2EU" target="_blank" rel="noopener">Leave a review</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
